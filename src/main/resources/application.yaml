@@ -1,0 +1,31 @@
+server:
+  port: 8095
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/querydsl
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # Application 실행시점에 테이블을 생성(재생성) #create #none
+    properties:
+      hibernate: # System.out.println으로 로그를 찍음
+#        dialect: org.hibernate.dialect.Oracle10gDialect
+#        show_sql: true
+        format_sql: true # 여러줄로 보기 좋게 나오게 해줌
+#        use_sql_comments: true # JQPL 보여줌 (/* */로 표시)
+        default_batch_fetch_size: 100 # 미리 땡겨올 데이터개수
+##    open-in-view: false # 커넥션 풀을 바로 끊게해줌(영속성 컨텍스트가 @Transcational까지만 유지되게 함)
+#  data:
+#    web:
+#      pageable:
+#        default-page-size: 10 # 페이징처리되는 기본값변경(기본:20)
+#        max-page-size: 2000 # 최대 페이지 크기
+##        one-indexed-parameters: true # 1부터 실행되게 만들어줌
+#
+logging: # logger로 로그를 찍음
+  level:
+    org.hibernate.SQL: debug # 로그를 남김
+##    org.hibernate.type: trace # SQL 파라미터값을 볼 수있음.
