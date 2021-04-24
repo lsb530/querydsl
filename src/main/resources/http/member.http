@@ -1,0 +1,35 @@
+### 멤버 다 받아오기
+GET http://localhost:8095/v1/members
+Accept: application/json
+
+### v1
+GET http://localhost:8095/v1/members?teamName=teamB
+Accept: application/json
+
+### v1
+GET http://localhost:8095/v1/members?teamName=teamB&ageGoe=31&ageLoe=35
+Accept: application/json
+
+### v1
+GET http://localhost:8095/v1/members?teamName=teamB&ageGoe=31&ageLoe=35&username=member31
+Accept: application/json
+
+### v2
+GET http://localhost:8095/v2/members
+Accept: application/json
+
+### v2
+GET http://localhost:8095/v2/members?page=0&size=5
+Accept: application/json
+
+### v2
+GET http://localhost:8095/v2/members?page=1&size=5
+Accept: application/json
+
+### v3
+GET http://localhost:8095/v3/members?page=1&size=5
+Accept: application/json
+
+### v3
+GET http://localhost:8095/v3/members?page=0&size=200
+Accept: application/json
